@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block heading %}
+{% with greet='Reader' %}
+<h3 id="greet">Good to See you AGAIN!! {{ greet }}</h3>
+<section class="books wish-page">
+    {% for x in book %}
+    <div class="card">
+        <!-- <img src="static/images/the psychology of money.png" alt="Avatar"> -->
+        <div class="container card-padding">
+            <h1> {{ x.id }} </h1>
+            <h4><b> {{ x.title }} </b></h4>
+            <p> {{ x.author }} </p>
+            <p> {{ x.genre }} </p>
+            <p> {{ x.date }} </p>
+        </div>
+    </div>
+    {% endfor %}
+</section>
+{% endwith %}
+
+
+<section id="add">
+<form action="addToList/" method="post">
+        <div class="greet">
+            Got a <b>NEW BOOK</b> add it to your list
+        </div><br><br>
+        {% csrf_token %}
+        Title: <br>
+        <input type="text" name="title"><br><br><br>
+        Author: <br>
+        <input type="text" name="author"><br><br><br>
+        Genre: <br>
+        <input type="text" name="genre"><br><br><br>
+        <!-- Date: <br>
+        <input type="text" name="genre"><br><br><br> -->
+        <input type="submit" value="Add">
+
+    </form>
+</section>
+{% endblock %}

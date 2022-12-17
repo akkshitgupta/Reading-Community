@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block form %}
+<section class="form">
+    <div class="qoute">
+        LEADERS are those, <br>&nbsp; who are READERS
+    </div>
+    
+    <form action="addmember/" method="post">
+        <h3>A Warm Welcome to your <br> New Community</h3><br>
+        {% csrf_token %}
+        First Name:<br>
+        <input type="text" name="first" placeholder="First Name">
+        <br><br>
+        Last Name:<br>
+        <input type="text" name="last" placeholder="Last Name">
+        <br><br>
+        Username:<br>
+        <input type="text" name="email" placeholder="Enter email">
+        <br><br>
+        Password:<br>
+        <input type="password" name="password" placeholder="Create Password">
+        <h6>*create a strong password*</h6>
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+</section>
+{% endblock %}

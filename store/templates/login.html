@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block form %}
+<section class="form">    
+    <div class="qoute">
+        LEADERS are those, <br>&nbsp; who are READERS
+    </div>
+    <form action="check/" method="post">
+        <h3> Welcome Back to your Community</h3><br><br><br>
+        {% csrf_token %}
+        Username: <br>
+        <input type="text" name="username" placeholder="Enter Username"><br><br>
+        Password: <br>
+        <input type="password" name="password" placeholder="Enter Password"><br><br>
+        <input type="submit" value="Login"><br><br><br><br>
+        <h5>If don't have an account &nbsp;<a href="signup/">Join us</a> &nbsp; NOW!!</h5>
+    </form>
+</section>
+
+{% endblock %}
